@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>materials</artifactId>
+        <groupId>com.ym</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>thriftDemo</artifactId>
+
+    <properties>
+        <thrift.version>0.9.3</thrift.version>
+        <swift.version>0.9.3</swift.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.thrift/libfb303 -->
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libfb303</artifactId>
+            <version>${thrift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>${thrift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-annotation</artifactId>
+            <version>${swift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-codec</artifactId>
+            <version>${swift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-generator</artifactId>
+            <version>${swift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-idle-parse</artifactId>
+            <version>${swift.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.facebook.swift</groupId>
+            <artifactId>swift-service</artifactId>
+            <version>${swift.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
