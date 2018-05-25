@@ -16,6 +16,8 @@
         <module>serializer</module>
         <module>rmiProxyFactoryBean</module>
         <module>httpProxyFactoryBean</module>
+        <module>hessianProxyFactoryBean</module>
+        <module>customProxyFactoryBean</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -84,6 +86,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>5.0.0.Alpha1</version>
+            </dependency>
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>jsp-api</artifactId>
@@ -171,15 +178,22 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <!--<path>/${project.artifactId}</path>-->
-                    <path>/</path>
-                </configuration>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1655215</version>
             </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.tomcat.maven</groupId>-->
+                <!--<artifactId>tomcat7-maven-plugin</artifactId>-->
+                <!--<version>2.2</version>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash;<path>/${project.artifactId}</path>&ndash;&gt;-->
+                    <!--<path>/</path>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
+
 </project>

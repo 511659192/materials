@@ -4,9 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-    <bean id="userServiceProxy" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
-        <property name="serviceInterface" value="com.ym.materials.httpProxyFactoryBean.UserService"/>
-        <property name="serviceUrl" value="http://127.0.0.1:8080/user.httpInvoker"/>
+    <bean id="userServiceProxy" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+        <property name="serviceInterface" value="com.ym.materials.hessianProxyFactoryBean.UserService"></property>
+        <property name="serviceUrl" value="http://localhost:8080/user.hessianInvoker"/>
     </bean>
-
 </beans>
