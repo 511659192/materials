@@ -4,9 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-    <bean class="com.ym.materials.customProxyFactoryBean.ProviderFactoryBean" lazy-init="false">
+    <bean class="com.ym.materials.customProxyFactoryBean.provider.ProviderFactoryBean" lazy-init="false">
         <property name="serviceObject">
-            <bean class="com.ym.materials.customProxyFactoryBean.HelloServiceImpl"/>
+            <bean class="com.ym.materials.customProxyFactoryBean.service.HelloServiceImpl"/>
         </property>
         <property name="appKey" value="ares"/>
         <property name="weight" value="2"/>

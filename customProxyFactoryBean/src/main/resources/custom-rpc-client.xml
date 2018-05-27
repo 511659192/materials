@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byName">
 
-    <bean class="com.ym.materials.customProxyFactoryBean.RevokerFactoryBean" lazy-init="false">
-        <property name="targetInterface" value="com.ym.materials.customProxyFactoryBean.HelloService">
+    <bean class="com.ym.materials.customProxyFactoryBean.invoker.InvokerFactoryBean" lazy-init="false">
+        <property name="targetInterface" value="com.ym.materials.customProxyFactoryBean.service.HelloService">
         </property>
         <property name="clusterStrategy" value="WeightRandom"/>
         <property name="remoteAppKey" value="ares"/>

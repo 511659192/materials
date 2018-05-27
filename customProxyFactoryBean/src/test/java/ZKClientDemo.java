@@ -15,37 +15,10 @@ public class ZKClientDemo {
         String zkServers = "127.0.0.1:2181";
         int timeout = 300;
         ZkClient zkClient = new ZkClient(zkServers, timeout);
-        String path = "/zk-data";
+        String path = "/zk-data1/node1/node11";
 
-        if (zkClient.exists(path)) {
-            zkClient.delete(path);
-        }
+        zkClient.createPersistent(path, true);
 
-        zkClient.createPersistent(path);
 
-        zkClient.writeData(path, "test_data_1");
-
-        System.out.println(zkClient.readData(path).toString());
-
-        zkClient.subscribeDataChanges(path, new IZkDataListener() {
-            @Override
-            public void handleDataChange(String s, Object o) throws Exception {
-                System.out.printf("-----------------handleDataChange path:%s data:%s \n", s, JSON.toJSON(o));
-            }
-
-            @Override
-            public void handleDataDeleted(String s) throws Exception {
-                System.out.printf("=================handleDataDeleted path:%s \n", s);
-            }
-        });
-
-        zkClient.writeData(path, "data2");
-        zkClient.writeData(path, "data3");
-        zkClient.writeData(path, "data4");
-        zkClient.writeData(path, "data5");
-        TimeUnit.SECONDS.sleep(1);
-        zkClient.delete(path);
-
-        TimeUnit.SECONDS.sleep(5);
     }
 }
